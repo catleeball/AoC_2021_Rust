@@ -1,5 +1,8 @@
+use crate::day_one::run_day_one;
+
 mod day_one;
+mod utils;
 
 fn main() {
-    println!("Hello, world!");
+    run_day_one();
 }
