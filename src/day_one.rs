@@ -35,7 +35,6 @@ fn part_one_immutable() -> usize {
 
     lines
         .lines()
-        .into_iter()
         .map(|line| line.parse::<u16>().unwrap_or(0))
         .tuple_windows::<(u16, u16)>()
         .filter(|tup| tup.0 < tup.1)
