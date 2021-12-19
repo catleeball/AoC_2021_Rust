@@ -15,7 +15,7 @@ fn part_one() -> u16 {
     let lines: String = file_to_str("./src/day_one.input.txt");
 
     for line in lines.lines() {
-        let depth: u16 = line.parse::<u16>().unwrap_or(0);
+        let depth: u16 = line.parse().unwrap_or(0);
         if first_loop {
             first_loop = false;
             prev = depth;
@@ -27,17 +27,17 @@ fn part_one() -> u16 {
         prev = depth;
     }
 
-    return increases;
+    increases
 }
 
 fn part_one_immutable() -> usize {
     let lines: String = file_to_str("./src/day_one.input.txt");
 
-    return lines
+    lines
         .lines()
         .into_iter()
         .map(|line| line.parse::<u16>().unwrap_or(0))
         .tuple_windows::<(u16, u16)>()
         .filter(|tup| tup.0 < tup.1)
-        .count();
+        .count()
 }
